@@ -1,0 +1,21 @@
+employee_id,name,title,team,office,email,start_date,level
+E001,Marcus Rivera,CTO,Executive,Austin,marcus.rivera@acmecorp.com,2018-03-15,L5
+E002,James O'Brien,Principal Engineer,Platform,Austin,james.obrien@acmecorp.com,2018-06-01,L5
+E003,Priya Sharma,Engineering Manager,Backend,Austin,priya.sharma@acmecorp.com,2019-01-10,L4
+E004,David Kim,Engineering Manager,Frontend,Denver,david.kim@acmecorp.com,2019-04-22,L4
+E005,Dr. Ana Santos,ML Lead,Machine Learning,Austin,ana.santos@acmecorp.com,2020-02-03,L4
+E006,Tom Walsh,QE Manager,Quality Engineering,Toronto,tom.walsh@acmecorp.com,2019-08-12,L4
+E007,Lisa Zhang,Senior Backend Engineer,Backend,Austin,lisa.zhang@acmecorp.com,2020-05-18,L3
+E008,Carlos Mendez,Senior Frontend Engineer,Frontend,Denver,carlos.mendez@acmecorp.com,2020-07-01,L3
+E009,Emily Nguyen,Platform Engineer,Platform,Austin,emily.nguyen@acmecorp.com,2021-01-15,L3
+E010,Raj Patel,ML Engineer,Machine Learning,Austin,raj.patel@acmecorp.com,2021-03-20,L3
+E011,Sophie Martin,Backend Engineer,Backend,Toronto,sophie.martin@acmecorp.com,2021-06-07,L2
+E012,Alex Thompson,Frontend Engineer,Frontend,Denver,alex.thompson@acmecorp.com,2021-09-13,L2
+E013,Yuki Tanaka,QE Engineer,Quality Engineering,Toronto,yuki.tanaka@acmecorp.com,2022-01-10,L2
+E014,Omar Hassan,Platform Engineer,Platform,Austin,omar.hassan@acmecorp.com,2022-04-25,L2
+E015,Maria Garcia,Backend Engineer,Backend,Austin,maria.garcia@acmecorp.com,2022-08-01,L2
+E016,Jordan Lee,ML Engineer,Machine Learning,Denver,jordan.lee@acmecorp.com,2023-01-09,L2
+E017,Nathan Park,Junior Backend Engineer,Backend,Toronto,nathan.park@acmecorp.com,2023-06-15,L1
+E018,Ava Williams,Junior Frontend Engineer,Frontend,Denver,ava.williams@acmecorp.com,2023-09-04,L1
+E019,Chris Brown,Junior Platform Engineer,Platform,Austin,chris.brown@acmecorp.com,2024-01-22,L1
+E020,Diana Popov,Junior QE Engineer,Quality Engineering,Toronto,diana.popov@acmecorp.com,2024-03-11,L1

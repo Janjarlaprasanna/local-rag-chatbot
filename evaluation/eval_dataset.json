@@ -1,0 +1,73 @@
+[
+  {
+    "question": "When was Acme Corp founded and by whom?",
+    "expected_keywords": ["2018", "Sarah Chen", "Marcus Rivera", "Austin"],
+    "source": "sample.txt"
+  },
+  {
+    "question": "How many engineers are on the Backend team?",
+    "expected_keywords": ["18"],
+    "source": "sample.txt"
+  },
+  {
+    "question": "What is the minimum unit test coverage requirement?",
+    "expected_keywords": ["80%"],
+    "source": "sample.txt"
+  },
+  {
+    "question": "What deployment strategy does Acme Corp use?",
+    "expected_keywords": ["blue-green", "canary"],
+    "source": "sample.txt"
+  },
+  {
+    "question": "Who leads the Machine Learning team?",
+    "expected_keywords": ["Ana Santos"],
+    "source": "sample.txt"
+  },
+  {
+    "question": "What is the annual learning and development budget per employee?",
+    "expected_keywords": ["2500", "$2,500"],
+    "source": "sample.txt"
+  },
+  {
+    "question": "What is Priya Sharma's role and team?",
+    "expected_keywords": ["Engineering Manager", "Backend"],
+    "source": "sample.csv"
+  },
+  {
+    "question": "Which employees work in the Toronto office?",
+    "expected_keywords": ["Sophie Martin", "Tom Walsh", "Yuki Tanaka", "Nathan Park", "Diana Popov"],
+    "source": "sample.csv"
+  },
+  {
+    "question": "What was Acme Corp's Q3 2025 revenue?",
+    "expected_keywords": ["7.2", "million"],
+    "source": "sample.pdf"
+  },
+  {
+    "question": "How many total customers does Acme Corp have?",
+    "expected_keywords": ["312"],
+    "source": "sample.pdf"
+  },
+  {
+    "question": "What is the NPS score mentioned in the quarterly report?",
+    "expected_keywords": ["62"],
+    "source": "sample.pdf"
+  },
+  {
+    "question": "When is the London office expected to open?",
+    "expected_keywords": ["November", "2025"],
+    "source": "sample.pdf"
+  },
+  {
+    "question": "How many weeks of parental leave does Acme Corp offer?",
+    "expected_keywords": ["16"],
+    "source": "sample.txt"
+  },
+  {
+    "question": "What is the capital of France?",
+    "expected_keywords": ["don't have enough information", "not", "outside"],
+    "source": "out_of_scope",
+    "expect_refusal": true
+  }
+]

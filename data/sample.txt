@@ -1,0 +1,132 @@
+ACME CORP ENGINEERING HANDBOOK
+Version 3.2 — Last Updated: September 2025
+
+=== CHAPTER 1: COMPANY OVERVIEW ===
+
+Acme Corp was founded in 2018 by Dr. Sarah Chen and Marcus Rivera in Austin, Texas. What began as a small consulting firm has grown into a mid-size technology company with over 350 employees across three offices: Austin (HQ), Denver, and Toronto.
+
+Our mission is to build reliable, scalable infrastructure tools that empower development teams worldwide. We specialize in cloud-native solutions, developer tooling, and enterprise automation platforms.
+
+Acme Corp went through Series A funding in 2020, raising $12 million from Horizon Ventures. In 2022, we closed our Series B at $45 million, led by Cascade Capital with participation from TechForward Fund. As of Q3 2025, annual recurring revenue (ARR) has reached $28 million.
+
+=== CHAPTER 2: ENGINEERING ORGANIZATION ===
+
+The engineering department is led by CTO Marcus Rivera and is organized into five teams:
+
+1. Platform Team (12 engineers) — Owns core infrastructure, Kubernetes clusters, CI/CD pipelines, and observability stack. Led by Principal Engineer James O'Brien.
+
+2. Backend Team (18 engineers) — Develops APIs, microservices, and data processing pipelines. Primary tech stack: Python, Go, PostgreSQL, Redis. Led by Engineering Manager Priya Sharma.
+
+3. Frontend Team (10 engineers) — Builds web applications and developer dashboards. Tech stack: React, TypeScript, Next.js. Led by Engineering Manager David Kim.
+
+4. Machine Learning Team (8 engineers) — Develops ML models for anomaly detection, log analysis, and intelligent alerting. Tech stack: Python, PyTorch, MLflow. Led by ML Lead Dr. Ana Santos.
+
+5. Quality Engineering Team (6 engineers) — Owns test automation, performance testing, and release validation. Led by QE Manager Tom Walsh.
+
+Total engineering headcount: 54 engineers plus 4 engineering managers and 1 CTO.
+
+=== CHAPTER 3: DEVELOPMENT PRACTICES ===
+
+Code Review Policy:
+All code changes require at least two approving reviews before merging to the main branch. One reviewer must be from the same team, and for changes affecting shared libraries, a review from the Platform team is also required. Reviews should be completed within one business day.
+
+Branching Strategy:
+We follow a trunk-based development model. Feature branches should be short-lived (no more than 3 days). All branches must pass CI checks before merge. Release branches are cut every two weeks on Wednesdays.
+
+Testing Requirements:
+- Unit test coverage must remain above 80% for all services.
+- Integration tests are required for all API endpoints.
+- End-to-end tests must pass in the staging environment before any production deployment.
+- Performance regression tests run nightly and block releases if P95 latency increases by more than 10%.
+
+Deployment Process:
+Deployments follow a blue-green strategy. New releases are first deployed to the canary environment (5% of traffic) for 30 minutes. If error rates remain below 0.1%, traffic is gradually shifted to the new version over 2 hours. Rollbacks are automated and trigger if error rates exceed 0.5%.
+
+=== CHAPTER 4: TECHNOLOGY STACK ===
+
+Backend Services:
+- Languages: Python 3.11, Go 1.21
+- Frameworks: FastAPI (Python), Gin (Go)
+- Database: PostgreSQL 15 (primary), Redis 7 (caching), ClickHouse (analytics)
+- Message Queue: Apache Kafka
+- Container Orchestration: Kubernetes (EKS on AWS)
+
+Frontend:
+- Framework: Next.js 14 with React 18
+- Language: TypeScript 5.2
+- State Management: Zustand
+- UI Components: Custom design system built on Radix UI
+- Testing: Vitest + Playwright
+
+Infrastructure:
+- Cloud Provider: AWS (primary), with disaster recovery on GCP
+- IaC: Terraform
+- CI/CD: GitHub Actions
+- Monitoring: Prometheus + Grafana
+- Logging: ELK Stack (Elasticsearch, Logstash, Kibana)
+- Alerting: PagerDuty integration with custom alert rules
+
+=== CHAPTER 5: SECURITY POLICIES ===
+
+All engineers must complete annual security training. The security review checklist must be completed for any feature that handles user data, authentication, or external integrations.
+
+Key policies:
+- All secrets must be stored in AWS Secrets Manager. Hard-coded secrets in repositories will trigger an automatic block.
+- Two-factor authentication (2FA) is mandatory for all internal systems.
+- Production database access requires approval from two senior engineers and is logged with full audit trail.
+- Penetration testing is conducted quarterly by an external firm (currently CyberShield Inc.).
+- Incident response follows the NIST framework. On-call rotation covers all teams 24/7.
+
+Data Classification:
+- Level 1 (Public): Marketing materials, blog posts, open-source code
+- Level 2 (Internal): Engineering docs, internal tools, sprint data
+- Level 3 (Confidential): Customer data, financial reports, security audit results
+- Level 4 (Restricted): Encryption keys, access credentials, PII
+
+=== CHAPTER 6: ONBOARDING ===
+
+New engineer onboarding takes two weeks and includes:
+
+Week 1:
+- Day 1: Laptop setup, account provisioning, welcome session with HR
+- Day 2: Engineering orientation with CTO Marcus Rivera
+- Day 3-4: Development environment setup, first "good first issue" PR
+- Day 5: Team lunch and 1:1 with direct manager
+
+Week 2:
+- Day 6-7: Deep dive into team's codebase with assigned buddy
+- Day 8: Security training and compliance overview
+- Day 9: First on-call shadow session
+- Day 10: Onboarding retrospective and 30/60/90 day goal setting
+
+Every new engineer is assigned a buddy from their team for the first 90 days. The buddy is responsible for daily check-ins during week 1, and weekly check-ins thereafter.
+
+=== CHAPTER 7: CAREER GROWTH ===
+
+Engineering levels at Acme Corp:
+
+- L1 Junior Engineer: 0-2 years experience. Focuses on well-defined tasks with guidance.
+- L2 Engineer: 2-4 years experience. Independently owns features and participates in design reviews.
+- L3 Senior Engineer: 4-7 years experience. Leads projects, mentors junior engineers, drives technical decisions.
+- L4 Staff Engineer: 7+ years experience. Owns cross-team technical initiatives, sets architectural direction.
+- L5 Principal Engineer: 10+ years experience. Company-wide technical leadership, represents Acme at conferences.
+
+Promotion cycles occur twice a year (April and October). Engineers submit a self-review, collect peer feedback, and meet with their manager and skip-level for calibration.
+
+Performance reviews use four dimensions:
+1. Technical Excellence (code quality, system design, debugging skills)
+2. Delivery (shipping features, meeting deadlines, reducing tech debt)
+3. Collaboration (code reviews, mentoring, cross-team work)
+4. Leadership (initiative, communication, impact beyond immediate team)
+
+=== CHAPTER 8: BENEFITS AND PERKS ===
+
+- Competitive salary benchmarked to 75th percentile of Austin tech market
+- Equity: stock options vesting over 4 years with 1-year cliff
+- Health insurance: 100% premium coverage for employees, 80% for dependents
+- 401(k) with 4% company match
+- Unlimited PTO (minimum 15 days encouraged)
+- $2,500 annual learning and development budget
+- $1,000 home office stipend for remote employees
+- Monthly team events and quarterly company offsites
+- Parental leave: 16 weeks paid for all parents

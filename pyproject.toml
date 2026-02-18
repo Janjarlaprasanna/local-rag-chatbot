@@ -1,0 +1,10 @@
+[project]
+name = "local-rag-chatbot"
+version = "1.0.0"
+description = "A fully local RAG chatbot using Ollama, ChromaDB, and Streamlit"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-v"
