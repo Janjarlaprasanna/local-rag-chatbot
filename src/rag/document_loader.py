@@ -7,7 +7,7 @@ from langchain_community.document_loaders import (
     TextLoader,
     CSVLoader,
 )
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 from rag.config import CHUNK_SIZE, CHUNK_OVERLAP
 

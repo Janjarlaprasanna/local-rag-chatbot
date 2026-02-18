@@ -92,5 +92,5 @@ def clear_collection():
     client = get_client()
     try:
         client.delete_collection(CHROMA_COLLECTION)
-    except ValueError:
+    except Exception:
         pass
