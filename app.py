@@ -37,10 +37,23 @@ with st.sidebar:
                 save_path = UPLOAD_DIR / uploaded_file.name
                 save_path.write_bytes(uploaded_file.getvalue())
 
-                with st.spinner(f"Processing {uploaded_file.name}..."):
-                    chunks = load_and_chunk(str(save_path))
-                    count = add_documents(chunks)
-                    st.success(f"{uploaded_file.name}: {count} chunks indexed")
+                status_text = st.empty()
+                progress_bar = st.progress(0)
+
+                status_text.text(f"Chunking {uploaded_file.name}...")
+                chunks = load_and_chunk(str(save_path))
+                num_chunks = len(chunks)
+
+                status_text.text(f"Embedding & indexing {num_chunks} chunks...")
+
+                def update_progress(done, total):
+                    progress_bar.progress(done / total)
+                    status_text.text(f"Indexing {uploaded_file.name}: {done}/{total} chunks")
+
+                count = add_documents(chunks, progress_callback=update_progress)
+                progress_bar.empty()
+                status_text.empty()
+                st.success(f"{uploaded_file.name}: {count} chunks indexed")
 
     st.divider()
 

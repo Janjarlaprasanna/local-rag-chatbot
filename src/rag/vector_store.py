@@ -2,7 +2,7 @@
 
 import chromadb
 
-from rag.config import CHROMA_DB_DIR, CHROMA_COLLECTION, TOP_K
+from rag.config import CHROMA_DB_DIR, CHROMA_COLLECTION, TOP_K, BATCH_SIZE
 from rag.embeddings import LocalEmbeddingFunction
 
 _client: chromadb.ClientAPI | None = None
@@ -26,11 +26,12 @@ def get_collection() -> chromadb.Collection:
     )
 
 
-def add_documents(chunks: list[dict]) -> int:
-    """Add document chunks to the vector store.
+def add_documents(chunks: list[dict], progress_callback=None) -> int:
+    """Add document chunks to the vector store in batches.
 
     Args:
         chunks: List of dicts with keys: id, text, metadata.
+        progress_callback: Optional callable(done, total) for progress updates.
 
     Returns:
         Number of chunks added.
@@ -39,19 +40,23 @@ def add_documents(chunks: list[dict]) -> int:
         return 0
 
     collection = get_collection()
-    collection.upsert(
-        ids=[c["id"] for c in chunks],
-        documents=[c["text"] for c in chunks],
-        metadatas=[c["metadata"] for c in chunks],
-    )
-    return len(chunks)
+    total = len(chunks)
+
+    for i in range(0, total, BATCH_SIZE):
+        batch = chunks[i : i + BATCH_SIZE]
+        collection.upsert(
+            ids=[c["id"] for c in batch],
+            documents=[c["text"] for c in batch],
+            metadatas=[c["metadata"] for c in batch],
+        )
+        if progress_callback:
+            progress_callback(min(i + BATCH_SIZE, total), total)
+
+    return total
 
 
 def query(question: str, top_k: int = TOP_K) -> list[dict]:
-    """Query the vector store for relevant chunks.
-
-    Returns list of dicts with keys: text, metadata, distance.
-    """
+    """Query the vector store for relevant chunks."""
     collection = get_collection()
     if collection.count() == 0:
         return []
