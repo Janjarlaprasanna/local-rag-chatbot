@@ -77,11 +77,11 @@ with st.sidebar:
     st.text(f"LLM: {OLLAMA_MODEL}")
     st.text(f"Embeddings: all-MiniLM-L6-v2")
 
-    if st.button("Clear All Documents", use_container_width=True):
+    if st.button("Clear All Documents", key="clear_docs", use_container_width=True):
         clear_collection()
         st.rerun()
 
-    if st.button("Clear Chat History", use_container_width=True):
+    if st.button("Clear Chat History", key="clear_chat", use_container_width=True):
         st.session_state.messages = []
         st.rerun()
 
